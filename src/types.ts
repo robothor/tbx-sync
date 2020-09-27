@@ -5,8 +5,16 @@ export interface Note {
 }
 
 export interface SyncSet {
+  // changed more recently in Src
   copyToDst: Note[],
+
+  // changed more recently in Dst
+  copyToSrc: Note[]
+
+  // removed from Src; never delete from Src
   deleteFromDst: Note[],
+
+  // modified times are equal
   ignore: Note[]
 }
 
